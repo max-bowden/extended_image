@@ -901,10 +901,7 @@ class _ExtendedImageState extends State<ExtendedImage>
       if (widget.enableLoadState) {
         switch (_loadState) {
           case LoadState.loading:
-            current = Container(
-              alignment: Alignment.center,
-              child: _getIndicator(context),
-            );
+            current = _getIndicator(context);
             break;
           case LoadState.completed:
             current = _getCompletedWidget();
