@@ -54,7 +54,7 @@ class ExtendedImage extends StatefulWidget {
     this.extendedImageGestureKey,
     this.isAntiAlias = false,
     this.handleLoadingProgress = false,
-    required this.loadingWidget,
+    this.loadingWidget = const SizedBox.shrink(),
   })  : assert(constraints == null || constraints.debugAssertIsValid()),
         constraints = (width != null || height != null)
             ? constraints?.tighten(width: width, height: height) ??
@@ -234,7 +234,7 @@ class ExtendedImage extends StatefulWidget {
     int? maxBytes,
     bool cacheRawData = false,
     String? imageCacheName,
-    required this.loadingWidget,
+    this.loadingWidget = const SizedBox.shrink(),
   })  : assert(cacheWidth == null || cacheWidth > 0),
         assert(cacheHeight == null || cacheHeight > 0),
         image = ExtendedResizeImage.resizeIfNeeded(
@@ -331,7 +331,7 @@ class ExtendedImage extends StatefulWidget {
     int? maxBytes,
     bool cacheRawData = false,
     String? imageCacheName,
-    required this.loadingWidget,
+    this.loadingWidget = const SizedBox.shrink(),
   })  :
         // FileImage is not supported on Flutter Web therefore neither this method.
         assert(
@@ -415,7 +415,7 @@ class ExtendedImage extends StatefulWidget {
     this.heroBuilderForSlidingPage,
     this.clearMemoryCacheWhenDispose = false,
     this.extendedImageGestureKey,
-    required this.loadingWidget,
+    this.loadingWidget = const SizedBox.shrink(),
     int? cacheWidth,
     int? cacheHeight,
     this.isAntiAlias = false,
@@ -494,7 +494,7 @@ class ExtendedImage extends StatefulWidget {
     int? cacheWidth,
     int? cacheHeight,
     this.isAntiAlias = false,
-    required this.loadingWidget,
+    this.loadingWidget = const SizedBox.shrink(),
     String? cacheKey,
     bool printError = true,
     double? compressionRatio,
